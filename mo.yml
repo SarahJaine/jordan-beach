@@ -1,0 +1,4 @@
+domain: domain.name.example
+heroku:
+  staging: jordan-beach-staging
+  production: jordan-beach

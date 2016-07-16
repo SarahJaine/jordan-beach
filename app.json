@@ -1,0 +1,22 @@
+{
+  "name": "jordan-beach",
+  "env":{
+    "DJANGO_SETTINGS_MODULE":{
+      "value": "jordanbeach.settings"
+    },
+    "SECRET_KEY": {
+      "generator": "secret"
+    }
+  },
+  "addons":[
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
+  ]
+}
