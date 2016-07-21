@@ -18,7 +18,7 @@ const gulpif = require('gulp-if')
 const plumber = require('gulp-plumber')
 const runSequence = require('run-sequence')
 const browserslist = 'last 2 versions, Firefox ESR'  // see https://github.com/ai/browserslist#queries
-const extrasGlob = './jordanbeach/static_src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2}'
+const extrasGlob = './jordanbeach/static_src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2,mp4}'
 
 let bundler = browserify({ entry: true, debug: true })
   .add('./jordanbeach/static_src/js/app.js')

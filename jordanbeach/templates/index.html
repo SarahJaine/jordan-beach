@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
 
 {% block content %}
 <main>
-    <div>
-        <video>
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="" class="fullscreen-bg__video" id="js-video-controls">
+            <source src="{% static 'video/pillowtime-HD.mp4' %}" type="video/mp4">
         </video>
     </div>
 </main>
