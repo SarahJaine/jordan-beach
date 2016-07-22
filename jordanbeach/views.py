@@ -11,3 +11,7 @@ class HomeView(TemplateView):
 class PublicationList(ListView):
     model = Publication
     template_name = 'publications.html'
+
+
+class CVView(TemplateView):
+    template_name = 'cv.html'

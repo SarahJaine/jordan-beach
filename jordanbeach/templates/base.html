@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Jordan Beach{% block title %}{% endblock %}</title>
+        <title>Jordan Beach - {% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
@@ -30,9 +30,16 @@
 
         <link rel="stylesheet" href="{% static 'css/app.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <script src="https://use.fontawesome.com/998d0f8dda.js"></script>
         <script src="{% static 'js/bundle.js' %}" async defer></script>
     </head>
     <body>
+
+        {% block hero %}
+        {% endblock hero %}
+
+        {% include 'partials/navigation.html' %}
+
         {% block content %}
         {% endblock content %}
 

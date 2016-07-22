@@ -11,19 +11,15 @@ dateDisplayEl.innerHTML = new Date()
 document.body.appendChild(dateDisplayEl)
 
 
-$("#js-video-controls").hover(
-  function() {
-    $(this).attr('controls', true);
-  }, function() {
-    $(this).removeAttr('controls');
-  }
+$('#js-video-controls').hover(
+  $(this).attr('controls', true),
+  $(this).removeAttr('controls')
 )
 
-// $("#js-video-controls").click(function() {
-//   // if $(this).paused() {
-//   //   $(this).play();
-//   // } else {
-//     $(this).pause();
+// $('#js-video-controls').click(
+//   function() {
+//   if $(this).attr('autoplay') {
 //     $(this).removeAttr('autoplay');
+//   }
 //   }
 // });

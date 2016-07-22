@@ -55,12 +55,12 @@ gulp.task('watchify', () => {
 gulp.task('sass', () => {
   return gulp.src('./jordanbeach/static_src/scss/**/*.scss')
     .pipe(plumber())
-    .pipe(stylelint({
-      browsers: browserslist,
-      syntax: 'scss',
-      reporters: [ { formatter: 'string', console: true } ],
-      failAfterError: false
-    }))
+    // .pipe(stylelint({
+    //   browsers: browserslist,
+    //   syntax: 'scss',
+    //   reporters: [ { formatter: 'string', console: true } ],
+    //   failAfterError: false
+    // }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: ['node_modules/foundation-sites/scss']
