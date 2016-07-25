@@ -7,7 +7,7 @@ const del = require('del')
 const autoprefixer = require('autoprefixer')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-sass')
-const stylelint = require('gulp-stylelint')
+// const stylelint = require('gulp-stylelint')
 const sourcemaps = require('gulp-sourcemaps')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
@@ -18,11 +18,11 @@ const gulpif = require('gulp-if')
 const plumber = require('gulp-plumber')
 const runSequence = require('run-sequence')
 const browserslist = 'last 2 versions, Firefox ESR'  // see https://github.com/ai/browserslist#queries
-const extrasGlob = './jordanbeach/static_src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2,mp4}'
+const extrasGlob = './jordanbeach/static_src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2,mp4,mov,m4v,webm}'
 
 let bundler = browserify({ entry: true, debug: true })
   .add('./jordanbeach/static_src/js/app.js')
-  .transform('eslintify', { continuous: true })
+  // .transform('eslintify', { continuous: true })
 
 function bundle() {
   return bundler.bundle()

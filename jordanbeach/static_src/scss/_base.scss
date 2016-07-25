@@ -1,0 +1,119 @@
+// Typography
+
+h1 {
+    color: $black;
+}
+
+h2 {
+    color: $pink;
+}
+
+.navbar__menu {
+    color: $white;
+
+}
+.underline {
+    text-decoration: underline;
+}
+
+// Hero
+
+.fullscreen-bg {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 60vh;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: relative;
+    top: 100%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 102%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url("../img/videoframe.jpg") $black center center / cover no-repeat;
+        display: block;
+        // position: absolute;
+        top: 10%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+
+// Navigation
+
+.navbar {
+    background-color: $black;
+    text-align: center;
+}
+
+.navbar__menu {
+    display: inline;
+    margin: 0;
+    list-style-type: none;
+    li {
+        display: inline-block;
+        padding: 1rem;
+        @include breakpoint(small only) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        @include breakpoint(medium only) {
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+        @include breakpoint(large) {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
+}
+
+a {
+    padding: 0.2rem;
+    &:link, &:visited {
+        color: $white;
+    }
+    &:hover {
+        color: $gray;
+        border-bottom: 5px solid $gray;
+    }
+}
+
+hr {
+    border-top: 5px solid $green;
+    min-width: 100%;
+}
+
+.projects {
+    display: inline-block;
+    position: relative;
+}
+
+.js-page-loaded {
+    border-bottom: 5px solid $white;
+}

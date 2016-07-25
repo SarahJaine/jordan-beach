@@ -45,7 +45,9 @@
 
 // // 1. Global
 // // ---------
-
+$gray: #979892;
+$pink: #BA5982;
+$green: #89B79A;
 // $global-font-size: 100%;
 // $global-width: rem-calc(1200);
 // $global-lineheight: 1.5;
@@ -59,10 +61,10 @@
 // $light-gray: #e6e6e6;
 // $medium-gray: #cacaca;
 // $dark-gray: #8a8a8a;
-// $black: #0a0a0a;
-// $white: #fefefe;
-// $body-background: $white;
-// $body-font-color: $black;
+$black: #293132;
+$white: #F7F7F2;
+$body-background: $gray;
+$body-font-color: $black;
 // $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $body-antialiased: true;
 // $global-margin: 1rem;
@@ -79,14 +81,14 @@
 // // 2. Breakpoints
 // // --------------
 
-// $breakpoints: (
-//     small: 0,
-//     medium: 640px,
-//     large: 1024px,
-//     xlarge: 1200px,
-//     xxlarge: 1440px,
-// );
-// $breakpoint-classes: (small medium large);
+$breakpoints: (
+    small: 0,
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1200px,
+    xxlarge: 1440px,
+);
+$breakpoint-classes: (small medium large xlarge);
 
 // // 3. The Grid
 // // -----------
@@ -107,24 +109,24 @@
 // $header-font-weight: $global-weight-normal;
 // $header-font-style: normal;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-// $header-sizes: (
-//     small: (
-//         "h1": 24,
-//         "h2": 20,
-//         "h3": 19,
-//         "h4": 18,
-//         "h5": 17,
-//         "h6": 16,
-//     ),
-//     medium: (
-//         "h1": 48,
-//         "h2": 40,
-//         "h3": 31,
-//         "h4": 25,
-//         "h5": 20,
-//         "h6": 16,
-//     ),
-// );
+$header-sizes: (
+    small: (
+        "h1": 24,
+        "h2": 20,
+        "h3": 19,
+        "h4": 18,
+        "h5": 17,
+        "h6": 16,
+    ),
+    medium: (
+        "h1": 48,
+        "h2": 40,
+        "h3": 31,
+        "h4": 25,
+        "h5": 20,
+        "h6": 16,
+    ),
+);
 // $header-color: inherit;
 // $header-lineheight: 1.4;
 // $header-margin-bottom: 0.5rem;

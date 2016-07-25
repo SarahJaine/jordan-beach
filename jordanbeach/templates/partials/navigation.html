@@ -1,20 +1,19 @@
-{% load static from staticfiles %}
 <nav class="navbar">
     <div class="row">
         <div class="small-12 columns">
             <ul class="navbar__menu">
                 <li>
-                    <a href="{% url 'home' %}">Home</a>
+                    <h5><a href="{% url 'home' %}" id="js-home">Home</a></h5>
                 </li>
                 <li>
-                    <a href="{% url 'cv' %}">CV</a>
+                    <h5><a href="{% url 'cv' %}" id="js-cv">CV</a></h5>
                 </li>
                 <li>
-                    <a href="mailto:someone@example.com" target="_top"><i class="fa fa-envelope-o fa-3x" aria-hidden="true" title="Email me"></i></a>
+                    <a href="mailto:someone@example.com" target="_top"><i class="fa fa-envelope-o fa-2x" aria-hidden="true" title="Email me"></i></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<hr>
+
 

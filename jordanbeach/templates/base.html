@@ -1,6 +1,3 @@
-
-{% load static from staticfiles %}
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -28,18 +25,15 @@
         <meta name="twitter:description" content="">
         <meta name="twitter:image" content="">
 
+        {# load static #}
+        {% load static from staticfiles %}
         <link rel="stylesheet" href="{% static 'css/app.css' %}">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <script src="https://use.fontawesome.com/998d0f8dda.js"></script>
         <script src="{% static 'js/bundle.js' %}" async defer></script>
     </head>
     <body>
 
-        {% block hero %}
-        {% endblock hero %}
-
         {% include 'partials/navigation.html' %}
-
         {% block content %}
         {% endblock content %}
 
