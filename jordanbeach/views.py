@@ -8,10 +8,6 @@ class HomeView(TemplateView):
     template_name = 'index.html'
 
 
-class PublicationList(ListView):
+class CVView(ListView):
     model = Publication
-    template_name = 'publications.html'
-
-
-class CVView(TemplateView):
     template_name = 'cv.html'

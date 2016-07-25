@@ -4,5 +4,64 @@
 {% block title %}CV{% endblock %}
 
 {% block content %}
-    <h1>CV</h1>
+<div class="row">
+    <div class="small-10 small-offset-1 xlarge-12 xlarge-offset-0 colums">
+        <h1>CV</h1>
+        <div class="position">
+            <h4>Current Position</h4>
+            <div class="row">
+                <div class="small-2 columns">
+                    <p><b>2011-Present</b></p>
+                </div>
+                <div class="small-10 columns">
+                    <p><b>Post-doctoral Fellow</b>, National Heart, Lung and Blood Institute<br><i>Advisor: Dr. John Hammer III</i></p>
+                </div>
+            </div>
+        </div>
+        <div class="education">
+            <h4>Education</h4>
+            <div class="row">
+                <div class="small-2 columns">
+                    <p><b>2004-2011</b></p>
+                </div>
+                <div class="small-10 columns">
+                    <p><b>Doctor of Philosophy, Physiology</b>, Department of Physiology and Biophysics, Case Western Reserve University<br><i>Advisor: Dr. Thomas Egelhoff</i></p>
+                </div>
+                <div class="small-2 columns">
+                    <p><b>2000-2004</b></p>
+                </div>
+                <div class="small-10 columns">
+                    <p><b>Bachelor of Science, Biology</b>, University of Mount Union</p>
+                </div>
+            </div>
+        </div>
+        <div class="funding">
+            <h4>Funding and Fellowships</h4>
+        </div>
+        <div class="teaching">
+            <h4>Teaching Experience</h4>
+        </div>
+        <h4>Awards</h4>
+        <h4>Volunteer Work</h4>
+        <h4>Professional Affiliations</h4>
+        <h4>National Meetings</h4>
+        <h4>Poster Presentations</h4>
+        <h4>Invited Talks</h4>
+
+        <h4>Publications</h4>
+        {% for pub in publication_list %}
+        <div class="pub__item">
+            <a href="{{ pub.link }}" target="_blank">
+                <p>
+                {{ pub.authors }}
+                "{{ pub.title }}"
+                {{ pub.journal_name }}.
+                {{ pub.date|date:"Y M d;" }}{{ pub.journal_vol|default_if_none:"" }}{% if pub.journal_issue %}({{ pub.journal_issue|default_if_none:"" }}){% endif %}{{ pub.pages|default_if_none:"" }}
+                </p>
+            </a>
+        </div>
+        {% endfor %}
+
+            </div>
+        </div>
 {% endblock content %}
