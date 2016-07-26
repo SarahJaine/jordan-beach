@@ -10,14 +10,14 @@
         <ul class="fa-ul">
 
             <li><h4><i class="fa-li fa fa-hourglass-half" aria-hidden="true"></i>Current Position</h4></li>
-            <div class="row" >
+            <div class="row">
                 <div class="small-3 columns">
                     <h6>2011-Present</h6>
                 </div>
                 <div class="small-9 columns">
                     <p><b>Post-doctoral Fellow</b>
                     <br>National Heart, Lung, and Blood Institute, National Institutes of Health
-                    <br><i>Advisor: Dr. John Hammer III</i></p>
+                    <br><em>Advisor: Dr. John Hammer III</em></p>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@
                 <div class="small-9 columns">
                     <p><b>Doctor of Philosophy, Physiology</b>
                     <br>Department of Physiology and Biophysics, Case Western Reserve University
-                    <br><i>Advisor: Dr. Thomas Egelhoff</i></p>
+                    <br><em>Advisor: Dr. Thomas Egelhoff</em></p>
                 </div>
                 <div class="small-3 columns">
                     <p><b>2000-2004</b></p>
@@ -42,50 +42,99 @@
             </li>
 
             <li><h4><i class="fa-li fa fa-usd" aria-hidden="true"></i>Funding and Fellowships</h4></li>
+            <div class="row">
+                <div class="small-3 columns">
+                    <p><b>2016-Present</b></p>
+                </div>
+                <div class="small-9 columns">
+                    <p><b>NHLBI/NIH Career Transition Award (K22)</b>
+                    <br><em>Title: Investigation of Myosin 2 Regulation by RLC Kinases during Dynamic Cellular Processes</em></p>
+                </div>
+                <div class="small-3 columns">
+                </div>
+                <div class="small-9 columns">
+                    <p>NHLBI DIR Lenfant Biomedical Fellow</p>
+                </div>
+                <div class="small-3 columns">
+                </div>
+                <div class="small-9 columns">
+                    <p>Pre-Doctoral Fellow, Cell Physiology Training Program TS2 DK07678</p>
+                </div>
+            </div>
 
-            <li><h4><i class="fa-li fa fa-pencil-square-o" aria-hidden="true"></i>Teaching Experience</h4>
+            <li><h4><i class="fa-li fa fa-pencil-square-o" aria-hidden="true"></i>Teaching Experience</h4></li>
             <h5>Mentor</h5>
-            {% for ment in mentor_list %}
-                <p><b>{{ ment.year_start }}{% if ment.year_end %}-{{ ment.year_end }}{% endif %}</b> {{ ment.mentee_role}}- {{ ment.mentee }}</p>
-            {% endfor %}
-            <h5>Instructor</h5>
-            {% for inst in instructor_list %}
-                <p><b>{{ inst.year_start }}</b> "{{ inst.course_name }}"- {{ inst.course_venue }}</p>
-            {% endfor %}
-            </li>
+                <div class="row">
+                {% for ment in mentor_list %}
+                    <p><b>{{ ment.year_start }}{% if ment.year_end %}-{{ ment.year_end }}{% endif %}</b> {{ ment.mentee_role}}- {{ ment.mentee }}</p>
+                {% endfor %}
+                </div>
+                <h5>Instructor</h5>
+                <div class="row">
+                {% for inst in instructor_list %}
+                    <p><b>{{ inst.year_start }}</b> "{{ inst.course_name }}"- {{ inst.course_venue }}</p>
+                {% endfor %}
+                </div>
+
 
             <li><h4><i class="fa-li fa fa-trophy"></i>Awards</h4></li>
-            {% for award in award_list %}
-                {{ award }}
-            {% endfor %}
+            <div class="row">
+                {% for award in award_list %}
+                    <p>{{ award.name }} {{ award.source }}, {{ award.date|date:"Y" }}</p>
+                {% endfor %}
+            </div>
 
             <li><h4><i class="fa-li fa fa-plus-square" aria-hidden="true"></i>Volunteer Work</h4></li>
+            <div class="row">
+                <p>High School Scientific Training and Enrichment Program (HiSTEP) host, 2015</p>
+                <p>ASCB Representative at USA Science and Engineering Festival, 2014, 2016</p>
+                <p>Fellows Award for Research Excellence Organizing Committee Member, 2013</p>
+                <p>CBPC Fellows Invited Speaker Organizing Committee, 2013</p>
+            </div>
 
             <li><h4><i class="fa-li fa fa-briefcase" aria-hidden="true"></i>Professional Affiliations</h4></li>
+            <div class="row">
+                <p>American Society for Cell Biology (2006-present)</p>
+            </div>
 
             <li><h4><i class="fa-li fa fa-users" aria-hidden="true"></i>National Meetings</h4></li>
 
             <li><h4><i class="fa-li fa fa-picture-o" aria-hidden="true"></i>Poster Presentations</h4></li>
-            {% for poster in poster_list %}
-                {{ poster }}
-            {% endfor %}
+            <div class="row">
+                <ul>
+                {% for poster in poster_list %}
+                    <li>
+                    {% autoescape on %}{{ poster.authors }}{% endautoescape %} "{{ poster.title }}" <em>Presented at {{ poster.event }}, {{ poster.date|date:"Y" }}, {{ poster.city }}, {{ poster.state }}</em></li>
+                {% endfor %}
+                </ul>
+            </div>
 
             <li><h4><i class="fa-li fa fa-comment fa-flip-horizontal" aria-hidden="true"></i>Invited Talks</h4></li>
+            <div class="row">
+            <ul>
             {% for talk in talk_list %}
-                {{ talk }}
+                <li>{{ talk.date|date:"Y" }} {{ talk.event }}, {{ talk.venue}}, {{ talk.city }}, {{ talk.state }}
+                <br>
+                <em>{{ talk.title }}</em></li>
             {% endfor %}
+            </ul>
+            </div>
 
             <li><h4><i class="fa-li fa fa-book" aria-hidden="true"></i>Publications</h4></li>
+            <div class="row">
+            <ul>
             {% for pub in publication_list %}
             <a href="{{ pub.link }}" target="_blank">
-                <p>
+                <li><p>
                 {{ pub.authors }}
                 {{ pub.title }}
-                <i>{{ pub.journal_name }}.</i>
+                <em>{{ pub.journal_name }}.</em>
                 {{ pub.date|date:"Y M d;" }}{{ pub.journal_vol|default_if_none:"" }}{% if pub.journal_issue %}({{ pub.journal_issue|default_if_none:"" }}){% endif %}{{ pub.pages|default_if_none:"" }}
-                </p>
+                </p></li>
             </a>
             {% endfor %}
+            </ul>
+            </div>
         </ul>
     </div>
 </div>
